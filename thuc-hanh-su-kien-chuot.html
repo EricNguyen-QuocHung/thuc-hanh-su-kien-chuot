@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        function init() {
+            needToMoveImage = document.getElementById("image");
+            needToMoveImage.style.position = "relative";
+            needToMoveImage.style.left = "0px";
+            needToMoveImage.style.left = "0px";
+        }
+        function moveLeft() {
+            if (parseInt(needToMoveImage.style.left)<= 100) {
+                needToMoveImage.style.left = "0px"
+            } else {
+                needToMoveImage.style.left = parseInt(needToMoveImage.style.left) - 100 + "px";
+            }
+        }
+
+        function moveRight() {
+            if (parseInt(needToMoveImage.style.left)>= 1080 - 150) {
+                needToMoveImage.style.left = "1000px";
+            }
+            needToMoveImage.style.left = parseInt(needToMoveImage.style.left) + 150 + "px";
+        }
+
+    </script>
+</head>
+<body>
+
+    <form>
+        <img src="ball-image.jpg" id="image"/>
+        <p>Click the button to move the ball</p>
+        <button type="button" onclick="init()">BEGIN</button>
+        <button type="button" id="leftButton" value="Move Left" onclick="moveLeft()" >Move Left</button>
+        <button type="button" id="rightButton" value="Move Right" onclick="moveRight()">Move Right</button>
+    </form>
+</body>
+</html>
